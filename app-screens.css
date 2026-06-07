@@ -1,0 +1,318 @@
+/* =========================================================
+   Nutrition Rx — in-phone app screen mockups
+   Crisp HTML/CSS recreation of the real app UI (dark theme)
+   Rendered inside .phone__screen on the App Sneak Peek page
+   ========================================================= */
+
+.app {
+  position: absolute;
+  inset: 0;
+  background: #18211b;
+  color: #efece2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* status bar */
+.app__status {
+  flex: none;
+  height: 30px;
+  padding: 0 20px 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #efece2;
+}
+.app__status .sig { display: flex; align-items: center; gap: 5px; }
+.app__status .sig svg { display: block; }
+
+/* scroll body */
+.app__body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 14px;
+  position: relative;
+}
+
+/* app header */
+.app__head { padding: 6px 2px 12px; }
+.app__title {
+  font-family: var(--font-display, "DM Serif Display"), serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.05;
+  margin: 0;
+  color: #f5f2e8;
+}
+.app__sub {
+  margin: 3px 0 0;
+  font-size: 10px;
+  color: #94978c;
+  letter-spacing: 0.01em;
+}
+.app__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.app__plus {
+  flex: none;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: #6f9a5a;
+  color: #14260f;
+  display: grid; place-items: center;
+}
+.app__icons { display: flex; gap: 8px; align-items: center; }
+.app__icon-btn {
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  display: grid; place-items: center;
+  color: #cdd0c4;
+  background: rgba(255,255,255,0.05);
+}
+
+/* search */
+.app__search {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 11px;
+  padding: 9px 12px;
+  margin-bottom: 12px;
+  color: #8d9085;
+  font-size: 12px;
+}
+
+/* chip rows */
+.app__chips {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 9px;
+  overflow: hidden;
+}
+.chip {
+  flex: none;
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #c5c8bc;
+  white-space: nowrap;
+}
+.chip--on {
+  background: #bfe0a3;
+  border-color: #bfe0a3;
+  color: #1f3015;
+  font-weight: 600;
+}
+.chip--heart {
+  margin-left: auto;
+  width: 30px; padding: 6px 0;
+  display: grid; place-items: center;
+  color: #c5c8bc;
+}
+.app__chips--tags .chip { font-size: 10px; padding: 5px 11px; color: #a7a99e; }
+
+/* recipe cards */
+.rcard {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.rcard__photo {
+  position: relative;
+  height: 92px;
+  background: #2a2c25 center/cover no-repeat;
+}
+.rcard__badge {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #fff;
+}
+.rcard__badge--breakfast { background: #c8772e; }
+.rcard__badge--lunch { background: #3f8a4d; }
+.rcard__badge--snack { background: #b24a3c; }
+.rcard__heart {
+  position: absolute;
+  top: 7px; right: 7px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: rgba(20,22,18,0.55);
+  display: grid; place-items: center;
+  color: #fff;
+}
+.rcard__body { padding: 9px 11px 11px; }
+.rcard__title {
+  font-family: var(--font-display, "DM Serif Display"), serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0 0 5px;
+  color: #f2efe5;
+  line-height: 1.1;
+}
+.rcard__meta {
+  display: flex; gap: 12px;
+  font-size: 9.5px;
+  color: #8f928700;
+  color: #8f9287;
+  margin-bottom: 8px;
+}
+.rcard__meta span { display: inline-flex; align-items: center; gap: 4px; }
+.rcard__macros { display: flex; gap: 6px; }
+.macro {
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+}
+.macro--cal { color: #d6d1c2; }
+.macro--p { color: #db7a60; }
+.macro--c { color: #d3a24c; }
+.macro--f { color: #82ad62; }
+
+/* bottom tab bar */
+.app__tabs {
+  flex: none;
+  height: 54px;
+  margin: 4px 9px 9px;
+  background: rgba(40,44,37,0.94);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 8px;
+  letter-spacing: 0.02em;
+  color: #82857b;
+  padding: 6px 5px;
+  border-radius: 13px;
+}
+.tab svg { display: block; }
+.tab--on { color: #57a6e0; background: rgba(255,255,255,0.06); }
+
+/* ---------- Macro Calculator screen ---------- */
+.mcard {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 16px 15px 18px;
+  margin-top: 6px;
+}
+.mcard__h {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #f2efe5;
+}
+.mrow { margin-bottom: 16px; }
+.mrow:last-child { margin-bottom: 0; }
+.mrow__top {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 7px;
+}
+.mrow__label { font-size: 12px; color: #d8dace; font-weight: 500; }
+.mrow__val { font-size: 13px; font-weight: 700; color: #f2efe5; }
+.mrow__val small { font-size: 10px; font-weight: 500; color: #8f9287; }
+.mtrack {
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+  overflow: hidden;
+}
+.mfill { height: 100%; border-radius: 999px; }
+.mfill--p { background: #6fae6c; }
+.mfill--c { background: #5a9fd4; }
+.mfill--f { background: #e07f57; }
+.mrow__sub {
+  display: flex; justify-content: space-between;
+  font-size: 9px; color: #82857b; margin-top: 5px;
+}
+.mtotal {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 12px;
+}
+.mtotal__l { font-size: 12px; color: #d8dace; font-weight: 500; }
+.mtotal__v { font-family: var(--font-display, "DM Serif Display"), serif; font-size: 17px; color: #bfe0a3; white-space: nowrap; }
+
+/* ---------- Meal Plan screen ---------- */
+.week {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px;
+  margin: 2px 0 10px;
+  font-size: 13px; font-weight: 600; color: #ece9df;
+}
+.week__arrow { color: #9a9d92; font-size: 14px; }
+.dow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  padding-bottom: 9px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.dow span {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  color: #82857b;
+}
+.pday {
+  display: grid;
+  grid-template-columns: 30px 36px 1fr 22px;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 0;
+}
+.pday__d { text-align: left; }
+.pday__day { font-size: 12px; font-weight: 600; color: #e8e5db; line-height: 1; }
+.pday__date { font-size: 9px; color: #82857b; margin-top: 2px; }
+.pday__thumb {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  background: #2a2c25 center/cover no-repeat;
+  flex: none;
+}
+.pday__meal { min-width: 0; }
+.pday__name {
+  font-size: 11.5px; color: #ece9df; font-weight: 500;
+  line-height: 1.15;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pday__count { font-size: 9px; color: #82857b; margin-top: 2px; }
+.pday__check {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #5e9a52;
+  display: grid; place-items: center;
+  color: #fff;
+}

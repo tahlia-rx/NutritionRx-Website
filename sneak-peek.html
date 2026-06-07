@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>App Sneak Peek — Nutrition Rx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="app-screens.css">
+<style>
+  body { background: var(--green-deep); color: var(--ink-on-green); }
+
+  .peek-hero {
+    padding: clamp(110px, 14vw, 160px) var(--page-pad) clamp(40px, 6vw, 60px);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .peek-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(54px, 9vw, 108px);
+    line-height: 0.98;
+    margin: 24px 0 0;
+    color: rgba(168, 200, 154, 0.32);
+    letter-spacing: -0.01em;
+  }
+  .peek-hero h1 .accent { color: var(--green-sage); }
+  .peek-hero .sub {
+    margin: 28px auto 0;
+    font-family: var(--font-italic);
+    font-style: italic;
+    color: var(--ink-on-green-soft);
+    font-size: clamp(17px, 2.2vw, 22px);
+    max-width: 540px;
+  }
+
+  /* Scene = a labeled phone showcase */
+  .scenes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(80px, 12vw, 140px);
+    padding: clamp(60px, 8vw, 96px) var(--page-pad) clamp(80px, 12vw, 140px);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .scene {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .scene--reverse .scene__phone { order: 2; }
+  .scene__pill { margin-bottom: 18px; }
+  .scene h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.02;
+    margin: 0 0 20px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+  .scene p {
+    color: var(--ink-on-green-soft);
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 38ch;
+    margin: 0 0 16px;
+  }
+  .scene__phone {
+    justify-self: center;
+    width: 100%;
+    max-width: 340px;
+  }
+  @media (max-width: 820px) {
+    .scene, .scene--reverse { grid-template-columns: 1fr; }
+    .scene--reverse .scene__phone { order: 0; }
+    .scene__phone { max-width: 300px; }
+  }
+
+  /* Mini phone frame */
+  .phone {
+    position: relative;
+    aspect-ratio: 9 / 19.5;
+    background: #1a1a1a;
+    border-radius: 44px;
+    padding: 10px;
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.6),
+      0 0 0 1.5px rgba(255,255,255,0.06) inset;
+  }
+  .phone__screen {
+    background: #1a1d18;
+    border-radius: 36px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: var(--ink);
+    font-family: var(--font-slab);
+    position: relative;
+  }
+  .phone__shot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .phone__notch {
+    position: absolute;
+    top: 16px; left: 50%; transform: translateX(-50%);
+    width: 96px; height: 26px; background: #0a0a0a;
+    border-radius: 14px; z-index: 3;
+  }
+  .phone__hero-img {
+    height: 38%;
+    background:
+      repeating-linear-gradient(135deg, rgba(0,0,0,0.05) 0 8px, transparent 8px 16px),
+      var(--cream-warm);
+    display: grid; place-items: center;
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .phone__body { padding: 16px 18px; }
+  .phone__title {
+    font-family: var(--font-slab);
+    font-weight: 700;
+    font-size: 15px;
+    margin: 4px 0 4px;
+    line-height: 1.15;
+  }
+  .phone__meta {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .phone__desc {
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    margin: 0 0 10px;
+  }
+  .phone__macros {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin: 10px 0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  }
+  .phone__macros div { text-align: center; }
+  .phone__macros .v {
+    font-family: var(--font-slab);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .phone__macros .u {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 3px;
+  }
+  .phone__macros .c .v { color: var(--macro-cal); }
+  .phone__macros .p .v { color: var(--macro-protein); }
+  .phone__macros .b .v { color: var(--macro-carbs); }
+  .phone__macros .f .v { color: var(--macro-fat); }
+
+  .phone__cta {
+    background: var(--green-mid);
+    color: var(--cream);
+    border-radius: 999px;
+    padding: 10px 14px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  /* Macro ring screen variant */
+  .ring-wrap {
+    padding: 26px 18px 14px;
+    text-align: center;
+  }
+  .ring-wrap h4 {
+    font-family: var(--font-slab);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+  .ring-wrap h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 12px;
+    color: var(--green-mid);
+  }
+  .ring {
+    width: 140px; height: 140px;
+    margin: 4px auto 8px;
+    position: relative;
+  }
+  .ring svg { transform: rotate(-90deg); }
+  .ring__c {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--green-mid);
+  }
+  .ring__c span {
+    display: block;
+    font-family: var(--font-slab);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  .bars { padding: 0 18px 14px; display: grid; gap: 8px; }
+  .bar { display: grid; grid-template-columns: 50px 1fr 36px; align-items: center; gap: 8px; font-size: 10px; }
+  .bar .name { color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; font-size: 9px; }
+  .bar .track { background: rgba(0,0,0,0.06); border-radius: 999px; height: 6px; overflow: hidden; }
+  .bar .fill { height: 100%; border-radius: 999px; }
+  .bar .val { font-weight: 700; text-align: right; color: var(--ink); }
+
+  /* Meal plan list */
+  .planlist { padding: 22px 16px; }
+  .planlist h4 {
+    font-family: var(--font-slab);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+  .planlist h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 14px;
+    color: var(--green-mid);
+  }
+  .planday {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    padding: 8px 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    align-items: center;
+    gap: 8px;
+  }
+  .planday .d {
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .planday .m {
+    font-size: 11px;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .planday .k { font-size: 9px; color: var(--ink-soft); }
+
+  /* Feature strip */
+  .feat-strip {
+    background: var(--cream);
+    color: var(--ink);
+    padding: clamp(80px, 12vw, 120px) var(--page-pad);
+  }
+  .feat-strip__inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .feat-strip h2 {
+    grid-column: 1 / -1;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 56px);
+    margin: 0 0 32px;
+    color: var(--green-mid);
+    line-height: 1;
+  }
+  .feat {
+    border-top: 1px solid rgba(0,0,0,0.18);
+    padding-top: 16px;
+  }
+  .feat .n {
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+  .feat h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 6px 0 8px;
+    color: var(--green-mid);
+  }
+  .feat p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+  @media (max-width: 820px) {
+    .feat-strip__inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .feat-strip__inner { grid-template-columns: 1fr; }
+  }
+
+  .closer {
+    text-align: center;
+    padding: clamp(80px, 12vw, 120px) var(--page-pad);
+  }
+  .closer h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1.02;
+    color: var(--cream);
+    margin: 0 0 28px;
+  }
+</style>
+</head>
+<body class="theme-green" data-screen-label="03 App Sneak Peek">
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#2f5a3a"/>
+  <circle cx="50" cy="54" r="22" fill="none" stroke="#cfe3bf" stroke-width="4"/>
+  <path d="M34 50h32a16 16 0 0 1-32 0z" fill="#cfe3bf"/>
+  <text x="50" y="32" font-family="Georgia, serif" font-size="15" fill="#cfe3bf" text-anchor="middle">Rx</text>
+</svg>
+</template>
+
+  <section class="peek-hero">
+    <span class="eyebrow">Sneak Peek</span>
+    <h1>The app, <span class="accent">in&nbsp;motion.</span></h1>
+    <p class="sub">A first look at what's coming. Screens shown are work-in-progress — final UI may differ.</p>
+  </section>
+
+  <div class="scenes">
+
+    <!-- Scene 1: Recipes -->
+    <section class="scene" data-comment-anchor="scene-recipes">
+      <div>
+        <span class="pill scene__pill">🥣 &nbsp;Recipes</span>
+        <h2>Recipes by
+Dr.Cooper</h2>
+        <p>Built for results, refined for taste. Every recipe is optimized for your macros, with flexible serving sizes, ingredient substitutions, and seamless one-tap tracking.</p>
+        <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">GF · DF · High-Protein · Plant Based</p>
+      </div>
+      <div class="scene__phone">
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="app">
+              <div class="app__status">
+                <span>9:41</span>
+                <span class="sig">
+                  <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.2c2.3 0 4.4.9 6 2.4l1.3-1.4A10.4 10.4 0 0 0 7.5.2 10.4 10.4 0 0 0 .2 3.2l1.3 1.4c1.6-1.5 3.7-2.4 6-2.4Zm0 3.4c1.4 0 2.7.5 3.6 1.5l1.3-1.4a7 7 0 0 0-9.8 0l1.3 1.4c1-1 2.2-1.5 3.6-1.5Zm0 3.3c.7 0 1.3.3 1.8.8l-1.8 1.9-1.8-1.9c.5-.5 1.1-.8 1.8-.8Z"/></svg>
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="1" width="21" height="10" rx="2.5" stroke="currentColor" opacity="0.5"/><rect x="2" y="2.5" width="16" height="7" rx="1.2" fill="currentColor"/><rect x="23" y="4" width="1.6" height="4" rx="0.8" fill="currentColor" opacity="0.5"/></svg>
+                </span>
+              </div>
+              <div class="app__body">
+                <div class="app__head">
+                  <div class="app__head-row">
+                    <div>
+                      <h3 class="app__title">Recipe Portal</h3>
+                      <p class="app__sub">Dr.Cooper's 1-Hour Meal Prep</p>
+                    </div>
+                    <span class="app__plus"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                  </div>
+                </div>
+                <div class="app__search">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+                  <span>Search recipes…</span>
+                </div>
+                <div class="app__chips">
+                  <span class="chip chip--on">All</span>
+                  <span class="chip">Breakfast</span>
+                  <span class="chip">Lunch</span>
+                  <span class="chip">Snack</span>
+                  <span class="chip">Dinner</span>
+                  <span class="chip chip--heart"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+                </div>
+                <div class="app__chips app__chips--tags">
+                  <span class="chip">Gluten Free</span>
+                  <span class="chip">Dairy Free</span>
+                  <span class="chip">High Protein</span>
+                  <span class="chip">Vegetarian</span>
+                  <span class="chip">Low Carb</span>
+                </div>
+
+                <div class="rcard">
+                  <div class="rcard__photo" style="background-image:url('images/food-oats.png')">
+                    <span class="rcard__badge rcard__badge--breakfast">Breakfast</span>
+                    <span class="rcard__heart"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+                  </div>
+                  <div class="rcard__body">
+                    <h4 class="rcard__title">Black Forest Overnight Oats</h4>
+                    <div class="rcard__meta">
+                      <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>10 min</span>
+                      <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg>4 servings</span>
+                    </div>
+                    <div class="rcard__macros">
+                      <span class="macro macro--cal">Cal: 423</span>
+                      <span class="macro macro--p">P: 30g</span>
+                      <span class="macro macro--c">C: 45g</span>
+                      <span class="macro macro--f">F: 12g</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rcard">
+                  <div class="rcard__photo" style="background-image:url('images/food-quinoa.png')">
+                    <span class="rcard__badge rcard__badge--lunch">Lunch</span>
+                    <span class="rcard__heart"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+                  </div>
+                  <div class="rcard__body">
+                    <h4 class="rcard__title">Mediterranean Quinoa Salad</h4>
+                    <div class="rcard__meta">
+                      <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>30 min</span>
+                      <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg>4 servings</span>
+                    </div>
+                    <div class="rcard__macros">
+                      <span class="macro macro--cal">Cal: 604</span>
+                      <span class="macro macro--p">P: 46g</span>
+                      <span class="macro macro--c">C: 55g</span>
+                      <span class="macro macro--f">F: 17g</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rcard">
+                  <div class="rcard__photo" style="background-image:url('images/food-chocballs.png')">
+                    <span class="rcard__badge rcard__badge--snack">Snack / Treat</span>
+                    <span class="rcard__heart"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+                  </div>
+                  <div class="rcard__body">
+                    <h4 class="rcard__title">Dark Choc Strawberry Crunch Balls</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="app__tabs">
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg>Home</span>
+                <span class="tab tab--on"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6.5v13M12 6.5C10.3 5.2 7.8 4.5 5 4.5v12.5c2.8 0 5.3.7 7 2 1.7-1.3 4.2-2 7-2V4.5c-2.8 0-5.3.7-7 2z" stroke-linejoin="round"/></svg>Recipes</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><line x1="6" y1="19" x2="6" y2="11"/><line x1="12" y1="19" x2="12" y2="5"/><line x1="18" y1="19" x2="18" y2="13"/></svg>Tracker</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/></svg>Meal Plan</span>
+                <span class="tab"><span style="font-family:var(--font-display);font-style:italic;font-size:15px;line-height:17px;">ƒ(x)</span>Calculator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 2: Macro Tracker -->
+    <section class="scene scene--reverse" data-comment-anchor="scene-tracker">
+      <div>
+        <span class="pill scene__pill">📊 &nbsp;Macro Tracker</span>
+        <h2>Tracking, without<br>the spreadsheet.</h2>
+        <p>Set your targets once, and the app does the calculations for you. As you track meals throughout the day, you'll receive personalized dinner recommendations designed to help you reach your remaining macro goals with ease.</p>
+        <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">Live Macros · Adaptive &amp; Individual Nutrition</p>
+      </div>
+      <div class="scene__phone">
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="app">
+              <div class="app__status">
+                <span>9:41</span>
+                <span class="sig">
+                  <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.2c2.3 0 4.4.9 6 2.4l1.3-1.4A10.4 10.4 0 0 0 7.5.2 10.4 10.4 0 0 0 .2 3.2l1.3 1.4c1.6-1.5 3.7-2.4 6-2.4Zm0 3.4c1.4 0 2.7.5 3.6 1.5l1.3-1.4a7 7 0 0 0-9.8 0l1.3 1.4c1-1 2.2-1.5 3.6-1.5Zm0 3.3c.7 0 1.3.3 1.8.8l-1.8 1.9-1.8-1.9c.5-.5 1.1-.8 1.8-.8Z"/></svg>
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="1" width="21" height="10" rx="2.5" stroke="currentColor" opacity="0.5"/><rect x="2" y="2.5" width="16" height="7" rx="1.2" fill="currentColor"/><rect x="23" y="4" width="1.6" height="4" rx="0.8" fill="currentColor" opacity="0.5"/></svg>
+                </span>
+              </div>
+              <div class="app__body">
+                <div class="app__head">
+                  <h3 class="app__title">Macro Calculator</h3>
+                  <p class="app__sub">Today · Wed, Nov 6</p>
+                </div>
+                <div class="mcard">
+                  <h4 class="mcard__h">Daily Targets</h4>
+                  <div class="mrow">
+                    <div class="mrow__top">
+                      <span class="mrow__label">Protein</span>
+                      <span class="mrow__val">112 <small>/ 150 g</small></span>
+                    </div>
+                    <div class="mtrack"><div class="mfill mfill--p" style="width:75%;"></div></div>
+                    <div class="mrow__sub"><span>75% of target</span><span>38 g to go</span></div>
+                  </div>
+                  <div class="mrow">
+                    <div class="mrow__top">
+                      <span class="mrow__label">Carbs</span>
+                      <span class="mrow__val">168 <small>/ 220 g</small></span>
+                    </div>
+                    <div class="mtrack"><div class="mfill mfill--c" style="width:76%;"></div></div>
+                    <div class="mrow__sub"><span>76% of target</span><span>52 g to go</span></div>
+                  </div>
+                  <div class="mrow">
+                    <div class="mrow__top">
+                      <span class="mrow__label">Fat</span>
+                      <span class="mrow__val">41 <small>/ 65 g</small></span>
+                    </div>
+                    <div class="mtrack"><div class="mfill mfill--f" style="width:63%;"></div></div>
+                    <div class="mrow__sub"><span>63% of target</span><span>24 g to go</span></div>
+                  </div>
+                </div>
+                <div class="mtotal">
+                  <span class="mtotal__l">Total Calories</span>
+                  <span class="mtotal__v">1,489 cal</span>
+                </div>
+              </div>
+              <div class="app__tabs">
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg>Home</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6.5v13M12 6.5C10.3 5.2 7.8 4.5 5 4.5v12.5c2.8 0 5.3.7 7 2 1.7-1.3 4.2-2 7-2V4.5c-2.8 0-5.3.7-7 2z" stroke-linejoin="round"/></svg>Recipes</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><line x1="6" y1="19" x2="6" y2="11"/><line x1="12" y1="19" x2="12" y2="5"/><line x1="18" y1="19" x2="18" y2="13"/></svg>Tracker</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/></svg>Meal Plan</span>
+                <span class="tab tab--on"><span style="font-family:var(--font-display);font-style:italic;font-size:15px;line-height:17px;">ƒ(x)</span>Calculator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 3: Meal Plan -->
+    <section class="scene" data-comment-anchor="scene-plan">
+      <div>
+        <span class="pill scene__pill">🗓 &nbsp;Meal Plans</span>
+        <h2>A week that<br>works.</h2>
+        <p>Live grocery lists keep everything organized and up to date. Plan your week with meals that fit your budget, available time, and the foods you love.</p>
+        <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">Balanced macros · Time savy plans · Week Sorted</p>
+      </div>
+      <div class="scene__phone">
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="app">
+              <div class="app__status">
+                <span>9:41</span>
+                <span class="sig">
+                  <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.2c2.3 0 4.4.9 6 2.4l1.3-1.4A10.4 10.4 0 0 0 7.5.2 10.4 10.4 0 0 0 .2 3.2l1.3 1.4c1.6-1.5 3.7-2.4 6-2.4Zm0 3.4c1.4 0 2.7.5 3.6 1.5l1.3-1.4a7 7 0 0 0-9.8 0l1.3 1.4c1-1 2.2-1.5 3.6-1.5Zm0 3.3c.7 0 1.3.3 1.8.8l-1.8 1.9-1.8-1.9c.5-.5 1.1-.8 1.8-.8Z"/></svg>
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="1" width="21" height="10" rx="2.5" stroke="currentColor" opacity="0.5"/><rect x="2" y="2.5" width="16" height="7" rx="1.2" fill="currentColor"/><rect x="23" y="4" width="1.6" height="4" rx="0.8" fill="currentColor" opacity="0.5"/></svg>
+                </span>
+              </div>
+              <div class="app__body">
+                <div class="app__head">
+                  <div class="app__icons" style="justify-content:flex-end;">
+                    <span class="app__icon-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke-linecap="round"/></svg></span>
+                    <span class="app__icon-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                  </div>
+                  <h3 class="app__title" style="margin-top:6px;">Meal Plan</h3>
+                </div>
+                <div class="week">
+                  <span class="week__arrow">‹</span>
+                  <span>Week of Nov 4–10</span>
+                  <span class="week__arrow">›</span>
+                </div>
+                <div class="dow"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+
+                <div class="pday">
+                  <div class="pday__d"><div class="pday__day">Mon</div><div class="pday__date">Nov 4</div></div>
+                  <div class="pday__thumb" style="background-image:url('images/food-oats.png')"></div>
+                  <div class="pday__meal"><div class="pday__name">Black Forest Overnight Oats</div><div class="pday__count">Breakfast</div></div>
+                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                </div>
+                <div class="pday">
+                  <div class="pday__d"><div class="pday__day">Mon</div><div class="pday__date">Nov 4</div></div>
+                  <div class="pday__thumb" style="background-image:url('images/food-teriyaki.png')"></div>
+                  <div class="pday__meal"><div class="pday__name">Teriyaki Chicken Bowl</div><div class="pday__count">Lunch</div></div>
+                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                </div>
+                <div class="pday">
+                  <div class="pday__d"><div class="pday__day">Mon</div><div class="pday__date">Nov 4</div></div>
+                  <div class="pday__thumb" style="background-image:url('images/food-banana.png')"></div>
+                  <div class="pday__meal"><div class="pday__name">Banana Protein Balls</div><div class="pday__count">Snack</div></div>
+                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                </div>
+                <div class="pday">
+                  <div class="pday__d"><div class="pday__day">Tues</div><div class="pday__date">Nov 5</div></div>
+                  <div class="pday__thumb" style="background-image:url('images/food-quinoa.png')"></div>
+                  <div class="pday__meal"><div class="pday__name">Mediterranean Quinoa Salad</div><div class="pday__count">Lunch</div></div>
+                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                </div>
+                <div class="pday">
+                  <div class="pday__d"><div class="pday__day">Wed</div><div class="pday__date">Nov 6</div></div>
+                  <div class="pday__thumb" style="background-image:url('images/food-oats.png')"></div>
+                  <div class="pday__meal"><div class="pday__name">Black Forest Overnight Oats</div><div class="pday__count">Breakfast</div></div>
+                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                </div>
+                <div class="pday">
+                  <div class="pday__d"><div class="pday__day">Wed</div><div class="pday__date">Nov 6</div></div>
+                  <div class="pday__thumb" style="background-image:url('images/food-chocballs.png')"></div>
+                  <div class="pday__meal"><div class="pday__name">Dark Choc Strawberry Crunch Balls</div><div class="pday__count">Snack</div></div>
+                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                </div>
+              </div>
+              <div class="app__tabs">
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg>Home</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6.5v13M12 6.5C10.3 5.2 7.8 4.5 5 4.5v12.5c2.8 0 5.3.7 7 2 1.7-1.3 4.2-2 7-2V4.5c-2.8 0-5.3.7-7 2z" stroke-linejoin="round"/></svg>Recipes</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><line x1="6" y1="19" x2="6" y2="11"/><line x1="12" y1="19" x2="12" y2="5"/><line x1="18" y1="19" x2="18" y2="13"/></svg>Tracker</span>
+                <span class="tab tab--on"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/></svg>Meal Plan</span>
+                <span class="tab"><span style="font-family:var(--font-display);font-style:italic;font-size:15px;line-height:17px;">ƒ(x)</span>Calculator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="feat-strip">
+    <div class="feat-strip__inner">
+      <h2>What's inside, at a glance.</h2>
+      <div class="feat"><div class="n">01</div><h4>Recipe portal</h4><p>100+ recipes at launch. Filter by macros, time, allergens.</p></div>
+      <div class="feat"><div class="n">02</div><h4>Macro tracker</h4><p>One-tap logging from any recipe. Custom daily targets.</p></div>
+      <div class="feat"><div class="n">03</div><h4>Meal plans</h4><p>Weekly plans with grocery lists you can actually shop.</p></div>
+      <div class="feat"><div class="n">04</div><h4>Prep mode</h4><p>Step-by-step prep flows for batch-cook Sundays.</p></div>
+    </div>
+  </section>
+
+  <section class="closer" style="background: var(--green-darker);">
+    <h2>Be among the first<br>to use it.</h2>
+    <a class="pill" href="https://38ebd151-0711-48f5-b0aa-54f2b20b8835.claudeusercontent.com/v1/design/projects/38ebd151-0711-48f5-b0aa-54f2b20b8835/serve/mobile/index.html?t=e06baa44c9c4c420fc03121a1256f8cfed9c6aff70de0fab4bd49fe251b8d713.e6d27146-04ad-4a14-9966-75253eb72420.7bfd5f30-734a-47d4-814c-40c2be260cab.1780737321.fp&direct=1" style="font-size:16px; padding:14px 28px;">Join the waitlist →</a>
+  </section>
+
+  <footer class="foot">
+    <p class="foot__note">Nutrition Rx provides general nutrition and wellness information only and is not medical advice. It is not a substitute for advice from your GP or a qualified health professional — always consult them before changing your diet, especially if you have a health condition or take medication.</p>
+    <span>© 2026 Nutrition Rx</span>
+    <div class="foot__links">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="https://www.instagram.com/eatwithdrcooper/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>NutritionRxNav.mount({ current: "sneak-peek" });</script>
+</body>
+</html>

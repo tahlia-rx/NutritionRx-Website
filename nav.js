@@ -15,11 +15,14 @@
   }
 
   function mount({ current = "home" } = {}) {
+    const dark = document.body.classList.contains("theme-green");
+    const wmTop = dark ? "images/logo-wordmark-light.png" : "images/logo-wordmark.png";
     // Top bar
     const topbar = el(`
       <header class="topbar" data-comment-anchor="topbar">
-        <a class="brand" href="index.html">
-          Nutrition Rx<small>by Dr. Cooper</small>
+        <a class="brand" href="index.html" aria-label="Nutrition Rx home">
+          <img class="brand__logo" src="${wmTop}" alt="Nutrition Rx">
+          <small>by Dr. Cooper</small>
         </a>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -34,7 +37,9 @@
     const menu = el(`
       <nav class="menu" id="primary-menu" aria-hidden="true" data-comment-anchor="primary-menu">
         <div class="menu__top">
-          <a class="menu__brand" href="index.html">Nutrition Rx</a>
+          <a class="menu__brand" href="index.html" aria-label="Nutrition Rx home">
+            <img class="menu__brand-logo" src="images/logo-wordmark-light.png" alt="Nutrition Rx">
+          </a>
           <button class="menu__close" aria-label="Close menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <line x1="6"  y1="6"  x2="18" y2="18"/>

@@ -177,6 +177,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 20px;
   letter-spacing: 0.04em;
   color: var(--green-mid);
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+.brand__logo {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 .theme-green .brand { color: var(--green-sage); }
 .brand small {
@@ -184,9 +192,11 @@ a { color: inherit; text-decoration: none; }
   font-style: italic;
   font-size: 13px;
   color: var(--ink-soft);
-  margin-left: 8px;
+  margin-left: 0;
   letter-spacing: 0;
+  white-space: nowrap;
 }
+.menu__brand-logo { height: 30px; width: auto; display: block; }
 .theme-green .brand small { color: var(--ink-on-green-soft); }
 
 .hamburger {

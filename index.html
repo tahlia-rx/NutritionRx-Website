@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nutrition Rx — by Dr. Cooper</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -31,6 +33,12 @@
     text-transform: uppercase;
     white-space: nowrap;
   }
+  .hero__logo {
+    width: clamp(280px, 64vw, 760px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
   .hero .lede {
     font-family: var(--font-slab);
     font-weight: 500;
@@ -56,6 +64,13 @@
     justify-content: center;
     margin-top: 8px;
   }
+  .hero__signup {
+    width: 100%;
+    max-width: 520px;
+    margin: 8px auto 0;
+    min-height: 64px;
+  }
+  .hero__signup iframe { max-width: 100%; }
   .hero input[type="email"] {
     appearance: none;
     border: 1.5px solid rgba(91,115,80,0.4);
@@ -165,6 +180,7 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal, .reveal--art { opacity: 1; transform: none; transition: none; }
   }
+
 </style>
 </head>
 <body data-screen-label="01 Landing" style="font-size: 14px">
@@ -181,16 +197,14 @@
     <div></div>
     <div class="hero__body stack" style="--gap: 28px;">
       <span class="eyebrow">From Dr. Cooper</span>
-      <h1 data-comment-anchor="hero-title" style="font-size: clamp(34px, 8.5vw, 104px)">NUTRITION R<span style="font-size: 0.66em; display: inline-block; vertical-align: baseline">X</span></h1>
+      <h1 data-comment-anchor="hero-title"><img class="hero__logo" src="images/logo-wordmark.png" alt="Nutrition Rx"></h1>
       <hr class="rule">
       <p class="lede">Built on evidence.<br>Designed for real life.</p>
       <p class="sub">Meal plans. Macro tracking. Recipes that actually work on a busy week.</p>
 
-      <form onsubmit="event.preventDefault(); this.querySelector('.thanks').hidden=false;">
-        <input type="email" placeholder="you@example.com" aria-label="Email address" required>
-        <button class="btn-primary" type="submit">Join the waitlist</button>
-        <p class="hint thanks" hidden style="width:100%;">✓ You're on the list. Founding pricing coming your way.</p>
-      </form>
+      <div class="hero__signup" data-comment-anchor="waitlist">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="a552e4b9-af74-4bf8-8b6a-422f69eded4b"></script>
+      </div>
       <p class="hint">Founding member pricing — limited spots.</p>
     </div>
   </section>
@@ -254,5 +268,6 @@
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
+  
 </body>
 </html>

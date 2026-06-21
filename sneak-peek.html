@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>App Sneak Peek — Nutrition Rx</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -361,7 +363,7 @@
         <span class="pill scene__pill">🥣 &nbsp;Recipes</span>
         <h2>Recipes by
 Dr.Cooper</h2>
-        <p>Built for results, refined for taste. Every recipe is optimized for your macros, with flexible serving sizes, ingredient substitutions, and seamless one-tap tracking.</p>
+        <p>Built for results, refined for taste. Every recipe is optimised for your macros, with flexible serving sizes, ingredient substitutions, and seamless one-tap tracking.</p>
         <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">GF · DF · High-Protein · Plant Based</p>
       </div>
       <div class="scene__phone">
@@ -474,7 +476,7 @@ Dr.Cooper</h2>
       <div>
         <span class="pill scene__pill">📊 &nbsp;Macro Tracker</span>
         <h2>Tracking, without<br>the spreadsheet.</h2>
-        <p>Set your targets once, and the app does the calculations for you. As you track meals throughout the day, you'll receive personalized dinner recommendations designed to help you reach your remaining macro goals with ease.</p>
+        <p>Set your targets once, and the app does the calculations for you. As you track meals throughout the day, you'll receive personalised dinner recommendations designed to help you reach your remaining macro goals with ease.</p>
         <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">Live Macros · Adaptive &amp; Individual Nutrition</p>
       </div>
       <div class="scene__phone">
@@ -490,48 +492,85 @@ Dr.Cooper</h2>
                 </span>
               </div>
               <div class="app__body">
-                <div class="app__head">
-                  <h3 class="app__title">Macro Calculator</h3>
-                  <p class="app__sub">Today · Wed, Nov 6</p>
-                </div>
-                <div class="mcard">
-                  <h4 class="mcard__h">Daily Targets</h4>
-                  <div class="mrow">
-                    <div class="mrow__top">
-                      <span class="mrow__label">Protein</span>
-                      <span class="mrow__val">112 <small>/ 150 g</small></span>
-                    </div>
-                    <div class="mtrack"><div class="mfill mfill--p" style="width:75%;"></div></div>
-                    <div class="mrow__sub"><span>75% of target</span><span>38 g to go</span></div>
-                  </div>
-                  <div class="mrow">
-                    <div class="mrow__top">
-                      <span class="mrow__label">Carbs</span>
-                      <span class="mrow__val">168 <small>/ 220 g</small></span>
-                    </div>
-                    <div class="mtrack"><div class="mfill mfill--c" style="width:76%;"></div></div>
-                    <div class="mrow__sub"><span>76% of target</span><span>52 g to go</span></div>
-                  </div>
-                  <div class="mrow">
-                    <div class="mrow__top">
-                      <span class="mrow__label">Fat</span>
-                      <span class="mrow__val">41 <small>/ 65 g</small></span>
-                    </div>
-                    <div class="mtrack"><div class="mfill mfill--f" style="width:63%;"></div></div>
-                    <div class="mrow__sub"><span>63% of target</span><span>24 g to go</span></div>
+                <div class="trk__head">
+                  <h3 class="app__title">Macro Tracker</h3>
+                  <div class="trk__datenav">
+                    <span class="trk__arrow"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 1.5 1.5 7.5l6 6"/></svg></span>
+                    <span class="trk__today">Today</span>
+                    <span class="trk__arrow"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5 7.5 7.5l-6 6"/></svg></span>
                   </div>
                 </div>
-                <div class="mtotal">
-                  <span class="mtotal__l">Total Calories</span>
-                  <span class="mtotal__v">1,489 cal</span>
+                <div class="trk__card">
+                  <div class="trkring">
+                    <svg viewBox="0 0 120 120">
+                      <circle class="trkring__bg" cx="60" cy="60" r="52"/>
+                      <circle class="trkring__fg" cx="60" cy="60" r="52"/>
+                    </svg>
+                    <div class="trkring__c">
+                      <span class="trkring__num">1442</span>
+                      <span class="trkring__lbl">kcal consumed</span>
+                      <span class="trkring__target">TARGET 2116</span>
+                    </div>
+                  </div>
+                  <div class="trkbars">
+                    <div class="trkbar">
+                      <span class="trkbar__name">Protein</span>
+                      <span class="trkbar__track"><span class="trkbar__fill trkbar__fill--p" style="width:74%;"></span></span>
+                      <span class="trkbar__val">90/121g</span>
+                    </div>
+                    <div class="trkbar">
+                      <span class="trkbar__name">Carbs</span>
+                      <span class="trkbar__track"><span class="trkbar__fill trkbar__fill--c" style="width:47%;"></span></span>
+                      <span class="trkbar__val">146/309g</span>
+                    </div>
+                    <div class="trkbar">
+                      <span class="trkbar__name">Fat</span>
+                      <span class="trkbar__track"><span class="trkbar__fill trkbar__fill--f" style="width:100%;"></span></span>
+                      <span class="trkbar__val">54/44g</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="trk-log">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Log Food
+                </button>
+                <div class="meal">
+                  <div class="meal__head">
+                    <span class="meal__title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+                      Breakfast
+                    </span>
+                    <span class="meal__sum">737 cal · 43g P</span>
+                  </div>
+                  <div class="meal__item">
+                    <div>
+                      <div class="meal__name">Blueberry Chia Pudding</div>
+                      <div class="meal__sub">243 cal · 1x serving</div>
+                    </div>
+                    <span class="meal__trash"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></span>
+                  </div>
+                  <div class="meal__item">
+                    <div>
+                      <div class="meal__name">Banana Bread Baked Oats</div>
+                      <div class="meal__sub">360 cal · 1x serving</div>
+                    </div>
+                    <span class="meal__trash"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></span>
+                  </div>
+                  <div class="meal__item">
+                    <div>
+                      <div class="meal__name">White Choc Almond Balls</div>
+                      <div class="meal__sub">134 cal · 1x serving</div>
+                    </div>
+                    <span class="meal__trash"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></span>
+                  </div>
                 </div>
               </div>
               <div class="app__tabs">
                 <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg>Home</span>
                 <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6.5v13M12 6.5C10.3 5.2 7.8 4.5 5 4.5v12.5c2.8 0 5.3.7 7 2 1.7-1.3 4.2-2 7-2V4.5c-2.8 0-5.3.7-7 2z" stroke-linejoin="round"/></svg>Recipes</span>
-                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><line x1="6" y1="19" x2="6" y2="11"/><line x1="12" y1="19" x2="12" y2="5"/><line x1="18" y1="19" x2="18" y2="13"/></svg>Tracker</span>
+                <span class="tab tab--on"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><line x1="6" y1="19" x2="6" y2="11"/><line x1="12" y1="19" x2="12" y2="5"/><line x1="18" y1="19" x2="18" y2="13"/></svg>Tracker</span>
                 <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/></svg>Meal Plan</span>
-                <span class="tab tab--on"><span style="font-family:var(--font-display);font-style:italic;font-size:15px;line-height:17px;">ƒ(x)</span>Calculator</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M16 7h4v4"/></svg>Progress</span>
               </div>
             </div>
           </div>
@@ -544,8 +583,8 @@ Dr.Cooper</h2>
       <div>
         <span class="pill scene__pill">🗓 &nbsp;Meal Plans</span>
         <h2>A week that<br>works.</h2>
-        <p>Live grocery lists keep everything organized and up to date. Plan your week with meals that fit your budget, available time, and the foods you love.</p>
-        <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">Balanced macros · Time savy plans · Week Sorted</p>
+        <p>Live grocery lists keep everything organised and up to date. Plan your week with meals that fit your budget, available time, and the foods you love.</p>
+        <p style="color: var(--green-sage); font-style: italic; font-family: var(--font-italic);">Balanced macros · Time savvy plans · Week Sorted</p>
       </div>
       <div class="scene__phone">
         <div class="phone">
@@ -560,55 +599,65 @@ Dr.Cooper</h2>
                 </span>
               </div>
               <div class="app__body">
-                <div class="app__head">
-                  <div class="app__icons" style="justify-content:flex-end;">
-                    <span class="app__icon-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke-linecap="round"/></svg></span>
-                    <span class="app__icon-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                <div class="mp__head">
+                  <div>
+                    <h3 class="mp__title">Weekly Meal Plan</h3>
+                    <p class="mp__sub">1-Hour Prep Philosophy</p>
                   </div>
-                  <h3 class="app__title" style="margin-top:6px;">Meal Plan</h3>
+                  <div class="mp__icons">
+                    <span class="mp__icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.2 12.4a1.5 1.5 0 0 0 1.5 1.2h9.1a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg></span>
+                    <span class="mp__icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></span>
+                  </div>
                 </div>
-                <div class="week">
-                  <span class="week__arrow">‹</span>
-                  <span>Week of Nov 4–10</span>
-                  <span class="week__arrow">›</span>
+                <div class="mp__hero">
+                  <div>
+                    <div class="mp__hero-eyebrow">Week 2 of 4 · Changed</div>
+                    <div class="mp__hero-title">Beginner<br>Friendly</div>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span class="mp__hero-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 hr Sunday prep</span>
+                    <span class="mp__hero-chev"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5 7.5 7.5l-6 6"/></svg></span>
+                  </div>
                 </div>
-                <div class="dow"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
-
-                <div class="pday">
-                  <div class="pday__d"><div class="pday__day">Mon</div><div class="pday__date">Nov 4</div></div>
-                  <div class="pday__thumb" style="background-image:url('images/food-oats.png')"></div>
-                  <div class="pday__meal"><div class="pday__name">Black Forest Overnight Oats</div><div class="pday__count">Breakfast</div></div>
-                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div class="mp__days">
+                  <div class="mpday">Sun</div>
+                  <div class="mpday">Mon</div>
+                  <div class="mpday">Tue</div>
+                  <div class="mpday">Wed</div>
+                  <div class="mpday">Thu</div>
+                  <div class="mpday mpday--on">Fri</div>
+                  <div class="mpday">Sat</div>
                 </div>
-                <div class="pday">
-                  <div class="pday__d"><div class="pday__day">Mon</div><div class="pday__date">Nov 4</div></div>
-                  <div class="pday__thumb" style="background-image:url('images/food-teriyaki.png')"></div>
-                  <div class="pday__meal"><div class="pday__name">Teriyaki Chicken Bowl</div><div class="pday__count">Lunch</div></div>
-                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div class="mp__banner">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>
+                  Eating from Sunday's prep — same meals Mon–Fri
                 </div>
-                <div class="pday">
-                  <div class="pday__d"><div class="pday__day">Mon</div><div class="pday__date">Nov 4</div></div>
-                  <div class="pday__thumb" style="background-image:url('images/food-banana.png')"></div>
-                  <div class="pday__meal"><div class="pday__name">Banana Protein Balls</div><div class="pday__count">Snack</div></div>
-                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div class="mpcard mpcard--b">
+                  <div class="mpcard__top">
+                    <span class="mpcard__label">Breakfast</span>
+                    <span class="mpcard__swap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Swap</span>
+                  </div>
+                  <div class="mpcard__name">Strawberry Overnight Oats</div>
+                  <div class="mpcard__macros">442 cal · <span class="p">41g P</span> · <span class="c">40g C</span> · <span class="f">9g F</span></div>
+                  <div class="mpcard__meta">10 min · 4 serves</div>
                 </div>
-                <div class="pday">
-                  <div class="pday__d"><div class="pday__day">Tues</div><div class="pday__date">Nov 5</div></div>
-                  <div class="pday__thumb" style="background-image:url('images/food-quinoa.png')"></div>
-                  <div class="pday__meal"><div class="pday__name">Mediterranean Quinoa Salad</div><div class="pday__count">Lunch</div></div>
-                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div class="mpcard mpcard--l">
+                  <div class="mpcard__top">
+                    <span class="mpcard__label">Lunch</span>
+                    <span class="mpcard__swap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Swap</span>
+                  </div>
+                  <div class="mpcard__name">Tuna Sushi Bowl</div>
+                  <div class="mpcard__macros">530 cal · <span class="p">43g P</span> · <span class="c">61g C</span> · <span class="f">12g F</span></div>
+                  <div class="mpcard__meta">30 min · 4 serves</div>
                 </div>
-                <div class="pday">
-                  <div class="pday__d"><div class="pday__day">Wed</div><div class="pday__date">Nov 6</div></div>
-                  <div class="pday__thumb" style="background-image:url('images/food-oats.png')"></div>
-                  <div class="pday__meal"><div class="pday__name">Black Forest Overnight Oats</div><div class="pday__count">Breakfast</div></div>
-                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
-                </div>
-                <div class="pday">
-                  <div class="pday__d"><div class="pday__day">Wed</div><div class="pday__date">Nov 6</div></div>
-                  <div class="pday__thumb" style="background-image:url('images/food-chocballs.png')"></div>
-                  <div class="pday__meal"><div class="pday__name">Dark Choc Strawberry Crunch Balls</div><div class="pday__count">Snack</div></div>
-                  <span class="pday__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>
+                <div class="mpcard mpcard--s">
+                  <div class="mpcard__top">
+                    <span class="mpcard__label">Snack</span>
+                    <span class="mpcard__swap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Swap</span>
+                  </div>
+                  <div class="mpcard__name">3 Ingredient Coconut Balls</div>
+                  <div class="mpcard__macros">98 cal · <span class="p">3.8g P</span> · <span class="c">9.6g C</span> · <span class="f">5.8g F</span></div>
+                  <div class="mpcard__meta">15 min · 9 serves</div>
                 </div>
               </div>
               <div class="app__tabs">
@@ -616,7 +665,7 @@ Dr.Cooper</h2>
                 <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6.5v13M12 6.5C10.3 5.2 7.8 4.5 5 4.5v12.5c2.8 0 5.3.7 7 2 1.7-1.3 4.2-2 7-2V4.5c-2.8 0-5.3.7-7 2z" stroke-linejoin="round"/></svg>Recipes</span>
                 <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><line x1="6" y1="19" x2="6" y2="11"/><line x1="12" y1="19" x2="12" y2="5"/><line x1="18" y1="19" x2="18" y2="13"/></svg>Tracker</span>
                 <span class="tab tab--on"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke-linecap="round"/></svg>Meal Plan</span>
-                <span class="tab"><span style="font-family:var(--font-display);font-style:italic;font-size:15px;line-height:17px;">ƒ(x)</span>Calculator</span>
+                <span class="tab"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M16 7h4v4"/></svg>Progress</span>
               </div>
             </div>
           </div>

@@ -162,7 +162,18 @@
     width: min(600px, 94%);
     margin: clamp(28px, 4.5vw, 52px) auto 0;
   }
-  .showcase__art img { width: 100%; height: auto; }
+  .showcase__art img {
+    width: 100%;
+    height: auto;
+    -webkit-mask-image:
+      linear-gradient(to bottom, transparent 0%, #000 7%, #000 89%, transparent 100%),
+      linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-image:
+      linear-gradient(to bottom, transparent 0%, #000 7%, #000 89%, transparent 100%),
+      linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
   .showcase__fade {
     height: clamp(56px, 8vw, 110px);
     background: linear-gradient(#3e6b46, var(--green-deep));
@@ -199,8 +210,9 @@
       <span class="eyebrow">From Dr. Cooper</span>
       <h1 data-comment-anchor="hero-title"><img class="hero__logo" src="images/logo-wordmark.png" alt="Nutrition Rx"></h1>
       <hr class="rule">
-      <p class="lede">Built on evidence.<br>Designed for real life.</p>
-      <p class="sub">Meal plans. Macro tracking. Recipes that actually work on a busy week.</p>
+      <p class="lede">Balanced eating,
+designed for real life.</p>
+      <p class="sub">Personalised Meal plans. Live Macro tracking. Recipes that work for your busy week.</p>
 
       <div class="hero__signup" data-comment-anchor="waitlist">
         <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="a552e4b9-af74-4bf8-8b6a-422f69eded4b"></script>
@@ -213,10 +225,10 @@
     <div class="showcase__head reveal">
       <span class="eyebrow">Inside the app</span>
       <h2>Plan, track, and repeat<br>— all in one place.</h2>
-      <p class="showcase__sub">Browse evidence-based recipes, scale them to your macros, and watch your goals come together.</p>
+      <p class="showcase__sub">Browse nutrient dense, fulfilling recipes, scale them to your macro needs, and watch your goals come together.</p>
     </div>
     <div class="showcase__art reveal reveal--art">
-      <img src="images/app-showcase.png" alt="Nutrition Rx app shown on three phones — recipes, macro logging, and the goals tracker" width="768" height="1191">
+      <img src="images/app-showcase.png" alt="Nutrition Rx app shown on three phones — recipes, macro logging, and the goals tracker" width="571" height="874">
     </div>
   </section>
   <div class="showcase__fade"></div>
@@ -225,8 +237,8 @@
     <div class="values__inner">
       <div>
         <span class="num">01</span>
-        <h3>Science-backed Nutrition</h3>
-        <p>Evidence based meal plans and nutrition tools designed for real life.</p>
+        <h3>Fuel without restriction</h3>
+        <p>Real, nourishing food and balanced nutrition, tailored to you.</p>
       </div>
       <div>
         <span class="num">02</span>

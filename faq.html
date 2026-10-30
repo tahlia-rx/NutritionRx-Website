@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — Nutrition Rx</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.faq{max-width:880px;margin:0 auto;padding:clamp(120px,16vw,180px) var(--page-pad) clamp(60px,9vw,100px)}
+.faq h1{font-family:var(--font-display);font-size:clamp(44px,6.5vw,88px);line-height:0.98;margin:16px 0 clamp(36px,5vw,56px);color:var(--green-mid);font-weight:400;letter-spacing:-0.01em;text-wrap:balance}
+.faq-list{display:grid}
+.faq-item{border-top:1px solid rgba(0,0,0,0.12)}
+.faq-item:last-child{border-bottom:1px solid rgba(0,0,0,0.12)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-family:var(--font-display);font-size:clamp(21px,2.4vw,26px);line-height:1.2;color:var(--green-mid)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";flex:none;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(0,0,0,0.18);font-family:var(--font-slab);font-size:22px;transition:transform .25s ease}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{margin:0 0 24px;max-width:62ch;font-size:18px;line-height:1.55;text-wrap:pretty}
+.cta-strip{text-align:center;padding:clamp(60px,8vw,96px) var(--page-pad);background:var(--cream-warm)}
+.cta-strip p{font-family:var(--font-display);font-size:clamp(28px,3.6vw,42px);margin:0 0 28px;color:var(--green-mid);line-height:1.1}
+a{color:var(--green-mid)}a:hover{color:var(--green-deep)}
+</style>
+</head>
+<body data-screen-label="04 FAQ">
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2f5a3a"></rect><text x="50" y="62" font-family="Georgia, serif" font-size="30" fill="#cfe3bf" text-anchor="middle">?</text></svg>
+</template>
+<section class="faq">
+<span class="eyebrow">FAQ</span>
+<h1>Frequently asked questions</h1>
+<div class="faq-list">
+<details class="faq-item"><summary>What do I get each week?</summary><p>Every Thursday at 6pm (Melbourne time), a new weekly drop lands in the app: 3 recipes, a prep plan and a shopping list. It's built so you can prep a few things on the weekend and eat well all week without thinking about it. Every past drop stays in your archive too, so the library keeps growing the longer you're a member.</p></details>
+<details class="faq-item"><summary>Is this a meal plan or a diet?</summary><p>Neither, really. There's no calorie counting and no cutting out food groups. Every meal follows the same simple plate I eat from myself: plenty of veg and fibre, good protein, smart carbs, a bit of healthy fat, and something fermented when it fits. It's how I think most people should be eating, made easy enough to actually stick with.</p></details>
+<details class="faq-item"><summary>Is it suitable for vegetarians, people with allergies, or families?</summary><p>Most recipes are easy to adapt, and I'll flag swaps where I can. If you have a serious allergy or a medical condition that affects what you can eat, check ingredients carefully and talk to your own doctor or dietitian. Recipes are written for 4 serves and scale up easily for families.</p></details>
+<details class="faq-item"><summary>How long does prep take?</summary><p>Most weeks, about 60–90 minutes of prep sets you up for the week. Individual meals are designed to come together in 30 minutes or less on a weeknight.</p></details>
+<details class="faq-item"><summary>Can I cancel?</summary><p>Yes, anytime, straight from your account. No emails to send and no hoops to jump through.</p></details>
+<details class="faq-item"><summary>What's the founders price?</summary><p>For the first 7 days after launch, founding members can join for $15/month, and that price never goes up for as long as you stay a member. After that, it's $19/month or $149/year.</p></details>
+<details class="faq-item"><summary>Is this medical advice?</summary><p>No. I'm a doctor, but Nutrition Rx is general nutrition and recipe content, not personalised medical advice. If you have a health condition, are pregnant, or take medication that's affected by diet, please check with your own doctor before making big changes.</p></details>
+<details class="faq-item"><summary>Is there an iPhone app?</summary><p>Right now Nutrition Rx runs in your browser on phone or desktop. You can save it to your home screen and it works just like an app. A proper App Store version is coming later, and your membership will carry over.</p></details>
+</div>
+</section>
+<section class="cta-strip">
+<p>The App is opening soon.<br>Founding spots are limited.</p>
+<a class="btn-primary" href="index.html">Get on the waitlist →</a>
+</section>
+<footer class="foot">
+<p class="foot__note" style="width: 75%; max-width: none;">Nutrition Rx provides general nutrition and educational information only and does not provide medical advice. Use of the website or app does not create a doctor–patient relationship. Always consult a qualified healthcare professional before making changes to your diet, particularly if you have a medical condition or take medication.</p>
+<span>© 2026 Nutrition Rx</span>
+<div class="foot__links"><a href="#">Terms</a><a href="#">Privacy</a><a href="https://www.instagram.com/eatwithdrcooper/" target="_blank" rel="noopener">Instagram</a></div>
+</footer>
+<script src="nav.js"></script>
+<script>NutritionRxNav.mount({ current: "faq" });</script>
+</body>
+</html>

@@ -1,11 +1,12 @@
 // Shared top bar + hamburger menu injector.
-// Each page calls NutritionRxNav.mount({ current: 'home' | 'about' | 'sneak-peek' | 'products' });
+// Each page calls NutritionRxNav.mount({ current: 'home' | 'about' | 'sneak-peek' | 'faq' });
 
 (function () {
   const LINKS = [
     { id: "home",       label: "Home",           href: "index.html",       num: "01" },
     { id: "about",      label: "About Cooper",   href: "about.html",       num: "02" },
     { id: "sneak-peek", label: "App Sneak Peek", href: "sneak-peek.html",  num: "03" },
+    { id: "faq",        label: "FAQ",            href: "faq.html",         num: "04" },
   ];
 
   function el(html) {

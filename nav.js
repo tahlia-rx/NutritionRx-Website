@@ -21,8 +21,8 @@
     // Top bar
     const topbar = el(`
       <header class="topbar" data-comment-anchor="topbar">
-        <a class="brand" href="index.html" aria-label="Nutrition Rx home">
-          <img class="brand__logo" src="${wmTop}" alt="Nutrition Rx">
+        <a class="brand" href="index.html" aria-label="Doctor's Hour home">
+          <svg class="brand__mark" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke-linecap="round"><g class="brand__mark-ticks"><line x1="50" y1="5" x2="50" y2="12.5" stroke-width="3.4" transform="rotate(0 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(30 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(60 50 50)"></line><line x1="50" y1="5" x2="50" y2="12.5" stroke-width="3.4" transform="rotate(90 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(120 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(150 50 50)"></line><line x1="50" y1="5" x2="50" y2="12.5" stroke-width="3.4" transform="rotate(180 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(210 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(240 50 50)"></line><line x1="50" y1="5" x2="50" y2="12.5" stroke-width="3.4" transform="rotate(270 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(300 50 50)"></line><line x1="50" y1="6" x2="50" y2="9.5" stroke-width="2.6" transform="rotate(330 50 50)"></line></g><path class="brand__mark-fork" d="M43.8 20.5V27a6.2 6.2 0 0 0 12.4 0v-6.5M50 20.5V50" stroke-width="3.4"></path><path class="brand__mark-hand" d="M50 50H71" stroke-width="4"></path><circle class="brand__mark-dot" cx="50" cy="50" r="5"></circle></svg><span class="wm wm--refined brand__wm">Doctor<span class="wm__ap"><span class="wm__q">&rsquo;</span>s</span> <em>Hour</em></span>
           <small>by Dr. Cooper</small>
         </a>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
@@ -38,8 +38,8 @@
     const menu = el(`
       <nav class="menu" id="primary-menu" aria-hidden="true" data-comment-anchor="primary-menu">
         <div class="menu__top">
-          <a class="menu__brand" href="index.html" aria-label="Nutrition Rx home">
-            <img class="menu__brand-logo" src="images/logo-wordmark-light.png" alt="Nutrition Rx">
+          <a class="menu__brand" href="index.html" aria-label="Doctor's Hour home">
+            <span class="wm wm--refined menu__wm">Doctor<span class="wm__ap"><span class="wm__q">&rsquo;</span>s</span> <em>Hour</em></span>
           </a>
           <button class="menu__close" aria-label="Close menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -50,7 +50,7 @@
         </div>
         <div class="menu__nav" role="menu"></div>
         <div class="menu__foot">
-          <span>© ${new Date().getFullYear()} Nutrition Rx</span>
+          <span>© ${new Date().getFullYear()} Doctor's Hour</span>
           <span><a href="#">Join the waitlist &nbsp;↗</a></span>
         </div>
       </nav>

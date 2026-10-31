@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,600;0,700;1,600;1,700&display=swap');
 /* =========================================================
-   Nutrition Rx — shared styles
+   Doctor's Hour — shared styles
    Design tokens pulled from brand graphics:
    - cream paper + deep forest green
    - sage pill accents, slab + transitional serif type
@@ -409,3 +410,16 @@ body.menu-open { overflow: hidden; }
 
 .foot__note { flex-basis: 100%; order: -1; margin: 0; padding-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.08); font-size: 12px; line-height: 1.55; font-style: italic; color: var(--ink-soft); max-width: 78ch; }
 .theme-green .foot__note { border-color: rgba(255,255,255,0.12); color: var(--ink-on-green-soft); }
+
+/* ---------- Doctor's Hour wordmark ---------- */
+.wm{font-family:"Gelasio",Georgia,serif;font-weight:700;line-height:1;letter-spacing:-0.01em;white-space:nowrap;color:#3d6b52;display:inline-block}
+.wm em{font-style:italic;color:#c4776a}
+.theme-green .wm,.menu .wm{color:#ede8e0}
+.wm--refined{font-weight:600;letter-spacing:-0.04em}
+.wm__ap{margin-left:-0.06em;margin-right:0.05em;letter-spacing:-0.1em}
+.wm__q{display:inline-block;transform:translate(0.08em,-0.05em) rotate(14deg) scale(0.85);transform-origin:50% 30%}
+.brand__wm{font-size:27px}
+.menu__wm{font-size:26px}
+.brand__mark{width:40px;height:40px;flex:none;display:block}
+.brand__mark-ticks{stroke:#c4776a}.brand__mark-fork{stroke:#3d6b52}.brand__mark-hand{stroke:#95aa99}.brand__mark-dot{fill:#95aa99}
+.theme-green .brand__mark-fork{stroke:#ede8e0}

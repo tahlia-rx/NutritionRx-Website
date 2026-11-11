@@ -33,7 +33,8 @@
     text-transform: uppercase;
     white-space: nowrap;
   }
-  .hero h1 .hero__wm{font-weight:600;font-size:clamp(44px,10.5vw,128px);display:block;text-align:center;text-transform:none;white-space:normal;line-height:1.05;letter-spacing:-0.04em}
+  .hero h1{line-height:1.05}
+  .hero h1 .hero__wm{font-weight:600;font-size:clamp(40px,10vw,128px);display:block;text-align:center;text-transform:none;white-space:normal;line-height:1.05;letter-spacing:-0.04em}
   .hero__ap{margin-left:-0.06em;margin-right:0.05em;letter-spacing:-0.1em}
   .hero__q{display:inline-block;transform:translate(0.08em,-0.05em) rotate(14deg) scale(0.85);transform-origin:50% 30%}
   .hero__logo {
@@ -74,6 +75,8 @@
     min-height: 64px;
   }
   .hero__signup iframe { max-width: 100%; }
+  .hero__signup{display:flex;justify-content:center;min-height:0}
+  .hero__join{font-size:clamp(17px,2vw,20px);padding:18px 40px;white-space:nowrap;width:auto;flex:none}
   .hero input[type="email"] {
     appearance: none;
     border: 1.5px solid rgba(91,115,80,0.4);
@@ -217,10 +220,8 @@
 designed for real life.</p>
       <p class="sub">Personalised Meal plans. Live Macro tracking. Recipes that work for your busy week.</p>
 
-      <div class="hero__signup" data-comment-anchor="waitlist">
-        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="a552e4b9-af74-4bf8-8b6a-422f69eded4b"></script>
-      </div>
-      <p class="hint">Founding member pricing — limited spots.</p>
+      <div class="hero__signup" data-comment-anchor="waitlist"><a class="btn-primary hero__join" href="https://www.doctorshour.com/" target="_blank" rel="noopener">Join the app →</a></div>
+      <p class="hint">Founding member pricing — limited time.</p>
     </div>
   </section>
 
@@ -260,6 +261,7 @@ designed for real life.</p>
     <p class="foot__note">Doctor's Hour provides general nutrition and wellness information only and is not medical advice. It is not a substitute for advice from your GP or a qualified health professional — always consult them before changing your diet, especially if you have a health condition or take medication.</p>
     <span>© 2026 Doctor's Hour</span>
     <div class="foot__links">
+      <a href="mailto:hello@doctorshour.com">hello@doctorshour.com</a>
       <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=1946a40e-50e3-4dcf-b703-84544bc75a5b">Terms</a>
       <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=960cfebc-e4dd-4759-b93a-fd1ca476af55">Privacy</a>
       <a href="https://www.instagram.com/eatwithdrcooper/" target="_blank" rel="noopener">Instagram</a>

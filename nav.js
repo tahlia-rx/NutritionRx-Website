@@ -7,6 +7,7 @@
     { id: "about",      label: "About Cooper",   href: "about.html",       num: "02" },
     { id: "sneak-peek", label: "App Sneak Peek", href: "sneak-peek.html",  num: "03" },
     { id: "faq",        label: "FAQ",            href: "faq.html",         num: "04" },
+    { id: "contact",    label: "Contact",        href: "contact.html",     num: "05" },
   ];
 
   function el(html) {
@@ -51,7 +52,7 @@
         <div class="menu__nav" role="menu"></div>
         <div class="menu__foot">
           <span>© ${new Date().getFullYear()} Doctor's Hour</span>
-          <span><a href="#">Join the waitlist &nbsp;↗</a></span>
+          <span><a href="https://www.doctorshour.com/" target="_blank" rel="noopener">Join the app &nbsp;↗</a></span>
         </div>
       </nav>
     `);

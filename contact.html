@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Doctor's Hour</title>
+<link rel="icon" type="image/png" href="images/doctors-hour-icon.png">
+<link rel="apple-touch-icon" href="images/doctors-hour-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact{max-width:880px;margin:0 auto;padding:clamp(120px,16vw,180px) var(--page-pad) clamp(60px,9vw,100px)}
+.contact h1{font-family:var(--font-display);font-size:clamp(44px,6.5vw,88px);line-height:0.98;margin:16px 0 24px;color:var(--green-mid);font-weight:400;letter-spacing:-0.01em;text-wrap:balance}
+.contact__lede{font-size:clamp(18px,2vw,21px);line-height:1.55;max-width:52ch;margin:0 0 clamp(40px,6vw,64px);text-wrap:pretty}
+.contact__list{display:grid}
+.contact__row{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:24px;align-items:baseline;padding:26px 0;border-top:1px solid rgba(0,0,0,0.12)}
+.contact__row:last-child{border-bottom:1px solid rgba(0,0,0,0.12)}
+.contact__label{font-family:var(--font-slab);font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--green-mid)}
+.contact__value{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);line-height:1.2;overflow-wrap:anywhere}
+.contact__value a{color:var(--green-mid);text-decoration:none;border-bottom:1px solid currentColor}
+.contact__value a:hover{color:var(--green-deep)}
+.contact__note{margin:6px 0 0;font-size:16px;line-height:1.5;color:var(--ink-soft)}
+@media (max-width:600px){.contact__row{grid-template-columns:1fr;gap:8px}}
+a{color:var(--green-mid)}a:hover{color:var(--green-deep)}
+</style>
+</head>
+<body data-screen-label="05 Contact">
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#3d6b52"></rect><rect x="24" y="32" width="52" height="36" rx="4" fill="none" stroke="#ede8e0" stroke-width="4"></rect><path d="M26 35l24 18 24-18" fill="none" stroke="#ede8e0" stroke-width="4"></path></svg>
+</template>
+<section class="contact">
+<span class="eyebrow">Contact</span>
+<h1>Get in touch</h1>
+<p class="contact__lede">Questions about the app, your membership, or working together? Send an email and we'll get back to you.</p>
+<div class="contact__list">
+<div class="contact__row"><span class="contact__label">Email</span><div><div class="contact__value"><a href="mailto:hello@doctorshour.com">hello@doctorshour.com</a></div></div></div>
+<div class="contact__row"><span class="contact__label">Instagram</span><div><div class="contact__value"><a href="https://www.instagram.com/eatwithdrcooper/" target="_blank" rel="noopener">@eatwithdrcooper</a></div></div></div>
+<div class="contact__row"><span class="contact__label">Quick answers</span><div><div class="contact__value"><a href="faq.html">Read the FAQ</a></div></div></div>
+</div>
+</section>
+<footer class="foot">
+<p class="foot__note" style="width: 75%; max-width: none;">Doctor's Hour provides general nutrition and educational information only and does not provide medical advice. Use of the website or app does not create a doctor–patient relationship. Always consult a qualified healthcare professional before making changes to your diet, particularly if you have a medical condition or take medication.</p>
+<span>© 2026 Doctor's Hour</span>
+<div class="foot__links"><a href="mailto:hello@doctorshour.com">hello@doctorshour.com</a><a href="#">Terms</a><a href="#">Privacy</a><a href="https://www.instagram.com/eatwithdrcooper/" target="_blank" rel="noopener">Instagram</a></div>
+</footer>
+<script src="nav.js"></script>
+<script>NutritionRxNav.mount({ current: "contact" });</script>
+</body>
+</html>
